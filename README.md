@@ -26,13 +26,16 @@ npx create-react-app <project-name>
 
 Northcoders has hired you and your pair as contractors to deliver a prototype for a 'student tracker'. At this stage, we have a database of student details and a rudimentary API. This API has endpoints to serve up the data and allow developers to edit or add new information. You need to create a user friendly interface so that coders and non-coders can view and edit students' information.
 
-Northcoders' team have given you a list of user stories for the application:
+## Completed User Stories
 
 - As an admin, I want to be able to view a list of the students currently on the course.
 - As an admin, I want to add new students to the system so that I can begin tracking them.
 - As an admin, I want to see which block each student is in so that I know where they are in the course.
-- As an admin, I want to graduate all relevant students from their respective blocks when it’s appropriate to do so.
 - As an admin, I want to see which cohort a student began the course on so that I can see how starting cohorts diverge.
+- As an admin, I want to graduate all relevant students from their respective blocks when it’s appropriate to do so.
+
+Northcoders' team have given you a list of user stories for the application:
+
 - As an admin, I want a visual indicator that I’ve either graduated a student or not from a block, so I can make sure I’ve considered all the students.
 - As an admin, I want a visual indicator of ‘how many times’ a student has been on a block so that I can make sure we’re properly supporting students who are resitting.
 - As an admin, I want to clearly see how many students are on each block so that I can plan accordingly.

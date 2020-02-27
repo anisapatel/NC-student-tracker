@@ -1,9 +1,12 @@
 import React from "react";
-
-const StudentCard = ({ name, startingCohort, currentBlock }) => {
+import { Link } from "@reach/router";
+const StudentCard = ({ name, startingCohort, currentBlock, student_id }) => {
   return (
     <main>
-      <h3> Name: {name}</h3>
+      <Link to={`/students/${student_id}`}>
+        <h3> Name: {name}</h3>
+      </Link>
+
       <p> Starting Cohort: {startingCohort}</p>
       <p>Current Block: {currentBlock}</p>
     </main>

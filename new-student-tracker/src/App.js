@@ -5,6 +5,7 @@ import { Router } from "@reach/router";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import SingleStudent from "./components/SingleStudent";
+import "./App.css";
 
 class App extends Component {
   render() {

@@ -33,18 +33,21 @@ Northcoders has hired you and your pair as contractors to deliver a prototype fo
 - As an admin, I want to see which block each student is in so that I know where they are in the course.
 - As an admin, I want to see which cohort a student began the course on so that I can see how starting cohorts diverge.
 - As an admin, I want to graduate all relevant students from their respective blocks when it’s appropriate to do so.
-
-Northcoders' team have given you a list of user stories for the application:
-
-- As an admin, I want a visual indicator that I’ve either graduated a student or not from a block, so I can make sure I’ve considered all the students.
+- As an admin, I want to see a list of graduates so I can feel good about my job.
 - As an admin, I want a visual indicator of ‘how many times’ a student has been on a block so that I can make sure we’re properly supporting students who are resitting.
 - As an admin, I want to clearly see how many students are on each block so that I can plan accordingly.
 - As an admin, I want to clearly see how many students are on the course so that I can plan accordingly.
-- As an admin, I want to see ‘graduation rates’ from each block so that I can prioritise which parts of the course to improve.
-- As an admin, I want to see a list of graduates so I can feel good about my job.
-- As an admin, I want to see what the average time through the course is for graduates so that I can monitor it over time.
-- As an admin, I want to be able to remove people from the course so that we can account for the occasional leaver.
-- As an admin, I want to see how many pathways through the course there have been so that we can communicate that to relevant stakeholders.
+
+Northcoders' team have given you a list of user stories for the application:
+
+## Incompleted User Stories
+
+- As an admin, I want a visual indicator that I’ve either graduated a student or not from a block, so I can make sure I’ve considered all the students.
+
+* As an admin, I want to see ‘graduation rates’ from each block so that I can prioritise which parts of the course to improve.
+* As an admin, I want to see what the average time through the course is for graduates so that I can monitor it over time.
+* As an admin, I want to be able to remove people from the course so that we can account for the occasional leaver.
+* As an admin, I want to see how many pathways through the course there have been so that we can communicate that to relevant stakeholders.
 
 ## Getting The Data
 

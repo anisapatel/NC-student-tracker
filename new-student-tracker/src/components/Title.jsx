@@ -4,7 +4,7 @@ class Title extends Component {
   render() {
     return (
       <header>
-        <h1>Northcoders Student Tracker</h1>
+        <h1 className="Title">Northcoders Student Tracker</h1>
       </header>
     );
   }

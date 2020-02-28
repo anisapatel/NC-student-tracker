@@ -1,9 +1,9 @@
 const axios = require("axios");
 
-export const getAllStudents = query => {
+export const getAllStudents = (block, cohort, order, sort_by, graduated) => {
   return axios
     .get("https://nc-student-tracker.herokuapp.com/api/students", {
-      params: { block: query, cohort: query }
+      params: { block, cohort, order, sort_by, graduated }
     })
     .then(({ data }) => {
       return data.students;
@@ -37,4 +37,10 @@ export const progressStudent = student_id => {
     .then(({ data }) => {
       return data.student;
     });
+};
+
+export const deleteStudent = student_id => {
+  return axios.delete(
+    `https://nc-student-tracker.herokuapp.com/api/students/${student_id}`
+  );
 };

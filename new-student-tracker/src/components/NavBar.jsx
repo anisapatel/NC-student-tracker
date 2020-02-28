@@ -3,7 +3,7 @@ import { Router, Link } from "@reach/router";
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className="NavBar">
       <Link to="/">
         <button>Home</button>
       </Link>

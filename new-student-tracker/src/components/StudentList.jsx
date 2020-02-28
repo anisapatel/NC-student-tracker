@@ -9,8 +9,11 @@ class StudentList extends Component {
   state = {
     students: [],
     isLoading: true,
-    block: "All",
-    cohort: 0
+    block: undefined,
+    cohort: undefined,
+    order: undefined,
+    sort_by: undefined,
+    graduated: undefined
   };
 
   componentDidMount() {
@@ -27,11 +30,19 @@ class StudentList extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    api.getAllStudents(this.state.block, this.state.cohort).then(students => {
-      this.setState(currentState => {
-        return { students: students, isLoading: false };
+    api
+      .getAllStudents(
+        this.state.block,
+        this.state.cohort,
+        this.state.order,
+        this.state.sort_by,
+        this.state.graduated
+      )
+      .then(students => {
+        this.setState(currentState => {
+          return { students: students, isLoading: false };
+        });
       });
-    });
   };
 
   handleChange = ({ target: { value, id } }) => {
@@ -43,28 +54,73 @@ class StudentList extends Component {
   render() {
     if (this.state.isLoading) return <Loader />;
     return (
-      <div>
+      <div className="Main">
+        <p></p>
+        Add student:
         <StudentAdder insertStudent={this.insertStudent} />
+        <p></p>
+        Queries:
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Select block:
-            <select id="block" onChange={this.handleChange} defaultValue="">
-              <option value="">All</option>
-              <option value="fun">Fundamentals</option>
-              <option value="be">Backend</option>
-              <option value="fe">Frontend</option>
-              <option value="proj">Project</option>
-            </select>
-            <button>Submit</button>
-          </label>
+          <section>
+            <div>
+              <label>
+                Select block:
+                <select id="block" onChange={this.handleChange} defaultValue="">
+                  <option value="">All</option>
+                  <option value="fun">Fundamentals</option>
+                  <option value="be">Backend</option>
+                  <option value="fe">Frontend</option>
+                  <option value="proj">Project</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <label>
+                View by cohort:
+                <input type="number" id="cohort" onChange={this.handleChange} />
+              </label>
+            </div>
+            <div>
+              <label>
+                Order by:
+                <select id="order" onChange={this.handleChange} defaultValue="">
+                  <option value="asc">asc</option>
+                  <option value="desc">desc</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <label>
+                Sort by:
+                <select
+                  id="sort_by"
+                  onChange={this.handleChange}
+                  defaultValue=""
+                >
+                  <option value="name">name</option>
+                  <option value="startingCohort">starting cohort</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <label>
+                Graduated:
+                <select
+                  id="graduated"
+                  onChange={this.handleChange}
+                  defaultValue=""
+                >
+                  <option value="false">No</option>
+                  <option value="true">Yes</option>
+                </select>
+              </label>
+            </div>
+            <p></p>
+            <button className="button">Submit</button>
+          </section>
         </form>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            View by cohort:
-            <input type="number" id="cohort" onChange={this.handleChange} />
-          </label>
-          <button>Submit</button>
-        </form>
+        <p></p>
+        Student Count: {this.state.students.length}
         {this.state.students.map(student => {
           return (
             <StudentCard

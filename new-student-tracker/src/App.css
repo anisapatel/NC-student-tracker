@@ -1,1 +1,33 @@
+.App {
+  display: grid;
+  grid-template-rows: 100px 50px 1fr 50px;
+  grid-template-areas:
+    "title"
+    "navbar"
+    "main"
+    "footer";
+}
 
+.Title {
+  grid-area: title;
+  border-color: 2px solid green;
+}
+
+.NavBar {
+  grid-area: navbar;
+  border-color: 2px solid red;
+}
+
+.Main {
+  grid-area: main;
+  border-color: 2px solid blue;
+}
+
+.Footer {
+  grid-area: footer;
+  border-color: 2px solid yellow;
+}
+
+.button {
+  font-size: medium;
+}

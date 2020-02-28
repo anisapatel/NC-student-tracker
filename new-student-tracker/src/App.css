@@ -10,24 +10,46 @@
 
 .Title {
   grid-area: title;
-  border-color: 2px solid green;
+  background-color: rgb(199, 71, 83);
 }
 
 .NavBar {
   grid-area: navbar;
-  border-color: 2px solid red;
+  border-color: 2px solid rgb(199, 71, 83);
+  background-color: rgb(199, 71, 83);
 }
 
 .Main {
   grid-area: main;
-  border-color: 2px solid blue;
+  background-color: whitesmoke;
 }
 
 .Footer {
   grid-area: footer;
-  border-color: 2px solid yellow;
 }
 
 .button {
   font-size: medium;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1px;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.name {
+  text-decoration: none;
 }

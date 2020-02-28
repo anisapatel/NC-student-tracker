@@ -34,7 +34,7 @@ class StudentAdder extends Component {
             id="startingCohort"
           ></input>
         </label>
-        <button>Submit</button>
+        <button className="button">Submit</button>
       </form>
     );
   }

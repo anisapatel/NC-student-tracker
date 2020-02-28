@@ -29,10 +29,10 @@ export const postStudent = (name, startingCohort) => {
     });
 };
 
-export const progressStudent = student_id => {
+export const progressStudent = (student_id, boolean) => {
   return axios
     .patch(
-      `https://nc-student-tracker.herokuapp.com/api/students/${student_id}?progress=true`
+      `https://nc-student-tracker.herokuapp.com/api/students/${student_id}?progress=${boolean}`
     )
     .then(({ data }) => {
       return data.student;

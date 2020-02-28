@@ -6,11 +6,12 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import SingleStudent from "./components/SingleStudent";
 import "./App.css";
+import Footer from "./components/Footer";
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <>
         <Title />
         <NavBar />
         <Router>
@@ -18,7 +19,8 @@ class App extends Component {
           <StudentList path="/students/" />
           <SingleStudent path="/students/:student_id" />
         </Router>
-      </div>
+        <Footer />
+      </>
     );
   }
 }

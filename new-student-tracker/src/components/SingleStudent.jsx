@@ -7,7 +7,6 @@ class SingleStudent extends Component {
   state = {
     student: { blockHistory: [] },
     isLoading: true,
-    hasGraduated: false,
     resitHistory: {}
   };
 
@@ -20,21 +19,17 @@ class SingleStudent extends Component {
   componentDidUpdate(prevProps, prevState) {
     const resitHistory = utils.getResitHistory(this.state.student.blockHistory);
     if (prevState.student.blockHistory !== this.state.student.blockHistory) {
-      this.setState(
-        currentState => {
-          return { ...currentState, resitHistory: resitHistory };
-        },
-        () => {
-          console.log(this.state.resitHistory);
-        }
-      );
+      this.setState(currentState => {
+        return { ...currentState, resitHistory: resitHistory };
+      });
     }
   }
 
   handleClick = event => {
-    api.progressStudent(this.props.student_id).then(student => {
+    const { id } = event.target;
+    api.progressStudent(this.props.student_id, id).then(student => {
       this.setState(currentState => {
-        return { student: student, hasGraduated: true };
+        return { student: student };
       });
     });
   };
@@ -44,7 +39,6 @@ class SingleStudent extends Component {
   };
 
   render() {
-    console.log(this.state.resitHistory);
     return (
       <div>
         <h3>Name: {this.state.student.name}</h3>
@@ -67,8 +61,23 @@ class SingleStudent extends Component {
           </ul>
         </section>
         <section>
-          <button className="button" type="submit" onClick={this.handleClick}>
+          <button
+            className="button"
+            id="true"
+            type="submit"
+            onChange={this.handleChange}
+            onClick={this.handleClick}
+          >
             Progress
+          </button>
+          <button
+            className="button"
+            id="false"
+            type="submit"
+            onChange={this.handleChange}
+            onClick={this.handleClick}
+          >
+            Resit
           </button>
           <p></p>
           <button
